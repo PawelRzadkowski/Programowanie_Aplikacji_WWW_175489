@@ -1,0 +1,56 @@
+div.container {
+	height: 100%;
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+a {
+	color: purple;
+}
+
+a.visited {
+	color: blue;
+}
+
+a.hover {
+	font-size: 115%;
+	color: orange;
+}
+div.header {
+    height: 13%;
+	width: 100%;
+	float: left;
+	text-align:center;
+	border-style: solid;
+	box-sizing: border-box;
+}
+
+div.navigation {
+	height: 75%;
+	width: 15%;
+	float: left;
+	border-style: solid;
+	border-bottom-style: none;
+	border-top-style: none;
+	box-sizing: border-box;
+}
+
+
+
+
+div.main {
+	height: 75%;
+	width: 85%;
+	float: left;
+	border-right-style: solid;
+	box-sizing: border-box;
+	
+}
+
+div.footer {
+	height: 12%;
+	width: 100%;
+	float: left;
+	border-style: solid;
+	box-sizing: border-box;
+}
