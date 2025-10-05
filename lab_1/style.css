@@ -8,14 +8,16 @@ a {
 	color: purple;
 }
 
-a.visited {
+a:visited {
 	color: blue;
 }
 
-a.hover {
+a:hover {
 	font-size: 115%;
 	color: orange;
 }
+
+
 div.header {
     height: 13%;
 	width: 100%;
@@ -35,15 +37,22 @@ div.navigation {
 	box-sizing: border-box;
 }
 
+.navigation hr {
+	width: 100%;
+	height: 1px;
+}
 
-
-
+.navigation table {
+	width: 100%;
+	text-align: center;
+}
 div.main {
 	height: 75%;
 	width: 85%;
 	float: left;
 	border-right-style: solid;
 	box-sizing: border-box;
+	padding-left: 25px;
 	
 }
 
@@ -53,4 +62,6 @@ div.footer {
 	float: left;
 	border-style: solid;
 	box-sizing: border-box;
+	padding-left: 25px;
+	text-align:center;
 }
