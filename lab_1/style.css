@@ -1,8 +1,21 @@
+html {
+ font-family: 'Inter', sans-serif;	
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+
 div.container {
 	height: 100%;
 	width: 100%;
 	float: left;
 	box-sizing: border-box;
+	overflow:auto;
+	
 }
 a {
 	color: purple;
@@ -21,10 +34,29 @@ a:hover {
 div.header {
     height: 13%;
 	width: 100%;
-	float: left;
+	/*float: left;*/
 	text-align:center;
 	border-style: solid;
 	box-sizing: border-box;
+	display:flex;
+	flex-wrap:wrap;
+	background-color: #b3ccff;
+	font-family: "Times New Roman", Times, serif;
+	 align-items: center;
+	  display: flex;
+  justify-content: center;
+}
+
+.header img {
+	height: 100%;
+	width: 7.5%;
+	/*object-fit:max-width;*/
+}
+
+.header img.nieformat {
+  width: 60%;
+  height: 60%;
+  /*object-fit:max width;*/
 }
 
 div.navigation {
@@ -35,6 +67,13 @@ div.navigation {
 	border-bottom-style: none;
 	border-top-style: none;
 	box-sizing: border-box;
+	background-color: #fff7e6;
+}
+
+.navigation img {
+	height: 40%;
+	width: 100%;
+	
 }
 
 .navigation hr {
@@ -53,8 +92,28 @@ div.main {
 	border-right-style: solid;
 	box-sizing: border-box;
 	padding-left: 25px;
+	overflow:auto;
+	background-image: url("images/Background_BO.png");
+	font-size: 115%;
+	text-align:center;
 	
 }
+
+.main img{
+	height:80%;
+	width: 35%;
+}
+
+.main img.flaga {
+	height: 25%;
+	width: 15%;
+	
+}
+
+.main li {
+	text-align:left;
+}
+
 
 div.footer {
 	height: 12%;
@@ -64,4 +123,11 @@ div.footer {
 	box-sizing: border-box;
 	padding-left: 25px;
 	text-align:center;
+	font-weight:bold;
+	background-color: #b3ccff;
+}
+
+.footer img{
+	height: 30%;
+	width: 3%;
 }
