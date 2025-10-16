@@ -5,6 +5,7 @@
 
 <head>
 <link rel="stylesheet" href="style.css">
+<script src="timedate.js" type="text/javascript"></script>
 <meta charset="UTF-8">
 <meta name="description" content="Projekt 1">
 <meta name="keywords" content="HTML5, CSS3, JavaScript">
@@ -17,7 +18,7 @@
 
 </head>
 
-<body>
+<body onload="startclock()">
 
 <!-- Jeśli obraz nie jest stockowy na licencji CC,  to autor jest podany w przypisach -->
 
@@ -78,7 +79,11 @@
 </div>
 
 <div class="main">
-
+<br>
+<p>Obecny czas i data</p><br>
+<div id="zegarek"></div>
+<div id="data"></div>
+<br>
 <!-- paragraf -->
 <h1 style="color:navy;">Witamy na stronie głównej!</h1>
 <br><br>
