@@ -1,0 +1,90 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+div.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13%;
+    background-color: #b3ccff;
+    border: solid 1px #000;
+    flex: 0 0 auto;
+}
+
+.header img.nieformat { width: 60%; height: 60%; }
+.header img { height: 100%; width: 7.5%; }
+
+/* GŁÓWNA SEKCJA FLEX */
+div.main-container {
+    display: flex;
+    flex: 1 1 auto; /* zajmuje pozostałą przestrzeń */
+}
+
+/* NAWIGACJA */
+div.navigation {
+    width: 15%;
+    flex: 0 0 auto;
+    background-color: #fff7e6;
+    padding: 10px;
+}
+
+.navigation table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    background: linear-gradient(to bottom right, #fff7e6, #ffe0b3);
+    border: 1px solid #d9b38c;
+    padding: 8px;
+    transition: background 0.3s ease;
+}
+
+.navigation table td {
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.navigation table td:hover {
+    background: linear-gradient(to bottom right, #ffe6cc, #ffcc80);
+}
+
+.navigation img { width: 100%; height: 40%; }
+
+/* MAIN */
+div.main {
+    flex: 1 1 auto;
+    padding-left: 25px;
+    overflow: auto;
+    text-align: center;
+    font-size: 115%;
+    background-image: url("../images/Background_BO.png");
+}
+
+/* STOPKA */
+div.footer {
+    flex: 0 0 auto;
+    width: 100%;
+    background-color: #b3ccff;
+    text-align: center;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+.footer img { width: 3%; height: 30%; }
+
+/* Dodatkowe style */
+a { color: purple; text-decoration: none; }
+a:visited { color: blue; }
+a:hover { font-size: 115%; color: orange; }
+
+/* Gallery, building, flag, leaders itp. pozostaje bez zmian */
