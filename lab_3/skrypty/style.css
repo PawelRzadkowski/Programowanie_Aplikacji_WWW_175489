@@ -242,14 +242,26 @@ div.main {
 }
 
 .main img{
-	height:80%;
-	width: 35%;
+	/*height:80%;
+	width: 35%; */
+	max-width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+#budynekstrona {
+  width: 200px;
+  cursor: pointer;
 }
 
+#budynekstrona2 {
+  width: 200px;
+  cursor: pointer;
+}
 .main img.flaga {
-	height: 25%;
-	width: 15%;
-	
+	height: auto ;
+	width: 50px ;
+	transition: transform 0.3s ease; 
+    cursor: pointer;
 }
 
 .main li {

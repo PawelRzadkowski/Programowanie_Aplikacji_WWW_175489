@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="description" content="Projekt 1">
 <meta name="keywords" content="HTML5, CSS3, JavaScript">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <meta name="author" content="Pawel Rzadkowski">
 <!-- webowa czcionka -->
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@
 </div>
 
 <div class="main">
-<h1>Abradż al-Bajt</h1><img src="images/SA.png" class="flaga" alt="flaga"><br>
+<h1>Abradż al-Bajt</h1><p>Kraj: </p><img src="images/SA.png" class="flaga" alt="flaga"><br>
 <br>
 
 <p><u>Abradż al-Bajt</u>, znany również jako Wieża Zegarowa w Mekce, to jeden z najbardziej charakterystycznych budynków na świecie. Wznoszący się na wysokość około <span style="color:red;">601 metrów</span>, jest jednym z najwyższych budynków oraz największym zegarem na świecie. Kompleks ten znajduje się bezpośrednio obok najświętszego miejsca islamu — Meczetu Al-Masjid al-Haram, co czyni go nie tylko architektonicznym, ale także kulturowym symbolem.
@@ -83,8 +83,8 @@ Budowa Abradż al-Bajt została ukończona w 2012 roku, a jego projekt łączy t
 Abradż al-Bajt pełni również funkcję centrum kulturalnego i religijnego, oferując przestrzeń dla milionów wiernych podczas corocznych pielgrzymek Hadżdż i Umra. Budynek jest przykładem zaawansowanych rozwiązań inżynieryjnych i symbolizuje rozwój oraz bogactwo regionu.
 <br><br>
 Jego monumentalna sylwetka dominuje nad panoramą Mekki, łącząc duchową głębię z nowoczesnym luksusem, dzięki czemu Abradż al-Bajt stał się jednym z najważniejszych punktów orientacyjnych na Bliskim Wschodzie.
-</p><br><br>
-<img src="images/Abr1.jpg" alt="budynek">
+</p><br><br><p><b>Galeria zdjęć kliknij aby powiększyć zdjęcie</b></p><br><br>
+<img src="images/Abr1.jpg" id="budynekstrona" alt="budynek">
 <br><br><br><br>
 <p style="text-align:left;"><b>Przypisy:</b></p>
 <ol>
@@ -142,6 +142,36 @@ $(document).ready(function() {
             height: originalHeight
         }, 300);
     });
+	let powiekszony = false;
+		 let powiekszony2 = false;
+	
+	 $("#budynekstrona").on("click", function() {
+    if (!powiekszony) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony = false;
+    }
+  });
+  
+  $("#budynekstrona2").on("click", function() {
+    if (!powiekszony2) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony2 = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony2 = false;
+    }
+  });
 });
 </script>
 </div>
