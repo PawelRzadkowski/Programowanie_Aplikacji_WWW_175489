@@ -124,7 +124,7 @@ div.main {
 	box-sizing: border-box;
 	padding-left: 25px;
 	overflow:auto;
-	background-image: url("images/Background_LA.png");
+	background-image: url("../images/Background_LA.png");
 	background-size: cover;      
     background-repeat: no-repeat; 
     background-position: center;  
@@ -221,25 +221,25 @@ div.main {
   transition: width 0.6s ease;
 }
 
-/* .test-block { */
-    /* width: 200px; */
-    /* height: 100px;  */
-    /* border: 2px solid rgba(71,236,30,1); */
-    /* background: rgba(71,236,30,1); */
-    /* text-align: center; */
-    /* color: #000; */
-    /* padding: 20px; */
-    /* cursor: pointer; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* -webkit-touch-callout: none; */
-    /* -webkit-user-select: none; */
-    /* -moz-user-select: none; */
-    /* -ms-user-select: none; */
-    /* user-select: none; */
-    /* transition: all 0.3s ease;  */
-/* } */
+.test-block {
+    width: 200px;
+    height: 100px; 
+    border: 2px solid rgba(71,236,30,1);
+    background: rgba(71,236,30,1);
+    text-align: center;
+    color: #000;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease; 
+}
 
 .main img{
 	height:80%;
@@ -247,10 +247,8 @@ div.main {
 }
 
 .main img.flaga {
-	height: auto ;
-	width: 50px ;
-	transition: transform 0.3s ease; 
-    cursor: pointer;
+	height: 25%;
+	width: 15%;
 	
 }
 

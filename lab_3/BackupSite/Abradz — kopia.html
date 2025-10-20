@@ -92,58 +92,7 @@ Jego monumentalna sylwetka dominuje nad panoramą Mekki, łącząc duchową gł�
 <li>Wikipedia.com - Autorstwa <a href="https://commons.wikimedia.org/wiki/User:King_Eliot" class="extiw" title="commons:User:King Eliot">King Eliot</a> - <a href="https://commons.wikimedia.org/wiki/File:Abraj-al-Bait-Towers.JPG" class="extiw" title="commons:File:Abraj-al-Bait-Towers.JPG">commons:File:Abraj-al-Bait-Towers.JPG</a>zobacz też: <a href="https://en.wikipedia.org/wiki/File:Abraj-al-Bait-Towers.JPG" class="extiw" title="en:File:Abraj-al-Bait-Towers.JPG">en:File:Abraj-al-Bait-Towers.JPG</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://pl.wikipedia.org/w/index.php?curid=4252163">Link</a></li>
 
 </ol>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function() {
 
-    
-    $(".building").on("click", function() {
-        if (!$(this).is(":animated")) {
-            $(this).animate({
-                width: "+=40px",
-                height: "+=25px"
-            }, 300);
-        }
-    });
-
-    
-    $(".building").on("mouseenter", function() {
-        $(this).css("z-index", "10");
-    }).on("mouseleave", function() {
-        $(this).css("z-index", "1");
-    });
-
-    
-    let numbers = $(".leader .number").map(function() {
-        return parseInt($(this).text());
-    }).get();
-
-    let max = Math.max(...numbers);
-
-    $(".leader").each(function() {
-        let num = parseInt($(this).find(".number").text());
-        let perc = (num / max) * 100;
-        $(this).find(".progress-bar").css("width", "0"); 
-        $(this).find(".progress-bar").animate({ width: perc + "%" }, 800);
-    });
-	
-	
-    var originalWidth = $(".flaga").width();
-    var originalHeight = $(".flaga").height();
-
-    $(".flaga").on("mouseenter", function() {
-        $(this).stop().animate({
-            width: originalWidth * 3,  
-            height: originalHeight * 2.2,
-        }, 300);
-    }).on("mouseleave", function() {
-        $(this).stop().animate({
-            width: originalWidth,        
-            height: originalHeight
-        }, 300);
-    });
-});
-</script>
 </div>
 
 
