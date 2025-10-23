@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<link rel="stylesheet" href="skrypty/style.css">
+<meta charset="UTF-8">
+<meta name="description" content="Projekt 1">
+<meta name="keywords" content="HTML5, CSS3, JavaScript">
+
+<meta name="author" content="Pawel Rzadkowski">
+<!-- webowa czcionka -->
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<!--temat nr.5 Największe budynki świata uklad strony 2 -->
+
+<title>Największe budynki świata </title>
+
+</head>
+
+<body>
+<div class="container">
+
+<div class="header">
+
+<img src="images/webp.webp" alt="szyld_obraz">
+<img src="images/Header.png" class="nieformat" alt="logo">&nbsp;&nbsp;
+<img src="images/Header4.png" alt="szyld_obraz2">
+
+</div>
+
+<div class="navigation">
+
+
+
+<table>
+<tr>
+<td>
+<a href="index.html">Strona główna</a>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+<a href="BK.html">Burdż Khalifa</a>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+<a href="M118.html">Merdeka 118</a>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+<a href="SHT.html">Shanghai Tower</a>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+<a href="Abradz.html">Abradż al-Bajt</a>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+<a href="Pingan.html">Ping an</a>
+<hr>
+</td>
+</tr>
+</table>
+<br><br>
+<img src="images/Background_naw3.png" alt="obraz_nawigacja">
+</div>
+
+<div class="main">
+<h1>Abradż al-Bajt</h1><p>Kraj: </p><img src="images/SA.png" class="flaga" alt="flaga"><br>
+<br>
+
+<p><u>Abradż al-Bajt</u>, znany również jako Wieża Zegarowa w Mekce, to jeden z najbardziej charakterystycznych budynków na świecie. Wznoszący się na wysokość około <span style="color:red;">601 metrów</span>, jest jednym z najwyższych budynków oraz największym zegarem na świecie. Kompleks ten znajduje się bezpośrednio obok najświętszego miejsca islamu — Meczetu Al-Masjid al-Haram, co czyni go nie tylko architektonicznym, ale także kulturowym symbolem.
+<br><br>
+Budowa Abradż al-Bajt została ukończona w 2012 roku, a jego projekt łączy tradycyjne islamskie wzory z nowoczesną technologią. Wieża zegarowa jest wyposażona w gigantyczny zegar o średnicy 43 metrów, widoczny z kilku kilometrów, a jej szczyt zdobi półksiężyc, który nocą jest podświetlany. Kompleks mieści luksusowe hotele, centra handlowe, apartamenty oraz liczne udogodnienia dla pielgrzymów odwiedzających Mekę.
+<br><br>
+Abradż al-Bajt pełni również funkcję centrum kulturalnego i religijnego, oferując przestrzeń dla milionów wiernych podczas corocznych pielgrzymek Hadżdż i Umra. Budynek jest przykładem zaawansowanych rozwiązań inżynieryjnych i symbolizuje rozwój oraz bogactwo regionu.
+<br><br>
+Jego monumentalna sylwetka dominuje nad panoramą Mekki, łącząc duchową głębię z nowoczesnym luksusem, dzięki czemu Abradż al-Bajt stał się jednym z najważniejszych punktów orientacyjnych na Bliskim Wschodzie.
+</p><br><br><p><b>Galeria zdjęć kliknij aby powiększyć zdjęcie</b></p><br><br>
+<img src="images/Abr1.jpg" id="budynekstrona" alt="budynek">
+<br><br><br><br>
+<p style="text-align:left;"><b>Przypisy:</b></p>
+<ol>
+<li>Wikipedia.com - https://pl.wikipedia.org/wiki/Biskupiec </li>
+<li>Wikipedia.com - Autorstwa <a href="https://commons.wikimedia.org/wiki/User:King_Eliot" class="extiw" title="commons:User:King Eliot">King Eliot</a> - <a href="https://commons.wikimedia.org/wiki/File:Abraj-al-Bait-Towers.JPG" class="extiw" title="commons:File:Abraj-al-Bait-Towers.JPG">commons:File:Abraj-al-Bait-Towers.JPG</a>zobacz też: <a href="https://en.wikipedia.org/wiki/File:Abraj-al-Bait-Towers.JPG" class="extiw" title="en:File:Abraj-al-Bait-Towers.JPG">en:File:Abraj-al-Bait-Towers.JPG</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://pl.wikipedia.org/w/index.php?curid=4252163">Link</a></li>
+
+</ol>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    
+    $(".building").on("click", function() {
+        if (!$(this).is(":animated")) {
+            $(this).animate({
+                width: "+=40px",
+                height: "+=25px"
+            }, 300);
+        }
+    });
+
+    
+    $(".building").on("mouseenter", function() {
+        $(this).css("z-index", "10");
+    }).on("mouseleave", function() {
+        $(this).css("z-index", "1");
+    });
+
+    
+    let numbers = $(".leader .number").map(function() {
+        return parseInt($(this).text());
+    }).get();
+
+    let max = Math.max(...numbers);
+
+    $(".leader").each(function() {
+        let num = parseInt($(this).find(".number").text());
+        let perc = (num / max) * 100;
+        $(this).find(".progress-bar").css("width", "0"); 
+        $(this).find(".progress-bar").animate({ width: perc + "%" }, 800);
+    });
+	
+	
+    var originalWidth = $(".flaga").width();
+    var originalHeight = $(".flaga").height();
+
+    $(".flaga").on("mouseenter", function() {
+        $(this).stop().animate({
+            width: originalWidth * 3,  
+            height: originalHeight * 2.2,
+        }, 300);
+    }).on("mouseleave", function() {
+        $(this).stop().animate({
+            width: originalWidth,        
+            height: originalHeight
+        }, 300);
+    });
+	let powiekszony = false;
+		 let powiekszony2 = false;
+	
+	 $("#budynekstrona").on("click", function() {
+    if (!powiekszony) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony = false;
+    }
+  });
+  
+  $("#budynekstrona2").on("click", function() {
+    if (!powiekszony2) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony2 = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony2 = false;
+    }
+  });
+});
+</script>
+</div>
+
+
+<div class="footer">
+<p><u><b> Kontakt </b></u></p>
+<img src="images/Foot_P.png" alt="telefon">&nbsp;&nbsp;<span>+48 123 456 789</span>
+</div>
+
+</div>
+
+</body>
+
+</html>
