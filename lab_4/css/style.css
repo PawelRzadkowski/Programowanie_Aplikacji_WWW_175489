@@ -124,7 +124,7 @@ div.main {
 	box-sizing: border-box;
 	padding-left: 25px;
 	overflow:auto;
-	background-image: url("../images/Background_LA.png");
+	background-image: url("../img/Background_LA.png");
 	background-size: cover;      
     background-repeat: no-repeat; 
     background-position: center;  
