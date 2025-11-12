@@ -9,6 +9,10 @@ if (file_exists($sciezka)) {
 } else {
     $strona = "html/logowanie.html";
 }
+
+$nr_indeksu = ‘175489’;
+ $nrGrupy = ‘ISI 3’;
+ echo ‘Autor: Paweł Rzadkowski ‘.$nr_indeksu.’ grupa ‘.$nrGrupy.’ <br /><br />’;
 ?>
 <!DOCTYPE html>
 <html lang="pl">
