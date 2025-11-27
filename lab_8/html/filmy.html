@@ -1,0 +1,97 @@
+<br><br>
+<h1>Filmy o najwyższych budynkach na świecie</h1>
+
+<p>Przykładowy filmik o budynku Burdź Khalifa</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ealxmw-jCtY?si=Bk3dYcoA99X3-XFr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Przykładowy filmik o Ping an Finance center</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WoPXyXPaR60?si=9iv0MhCrN2iQEP2a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>Przykładowy filmik o Abradż al-Bajt</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2MHyr72MpfA?si=_5Lqxw1kPcJCv4EL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    
+    $(".building").on("click", function() {
+        if (!$(this).is(":animated")) {
+            $(this).animate({
+                width: "+=40px",
+                height: "+=25px"
+            }, 300);
+        }
+    });
+
+    
+    $(".building").on("mouseenter", function() {
+        $(this).css("z-index", "10");
+    }).on("mouseleave", function() {
+        $(this).css("z-index", "1");
+    });
+
+    
+    let numbers = $(".leader .number").map(function() {
+        return parseInt($(this).text());
+    }).get();
+
+    let max = Math.max(...numbers);
+
+    $(".leader").each(function() {
+        let num = parseInt($(this).find(".number").text());
+        let perc = (num / max) * 100;
+        $(this).find(".progress-bar").css("width", "0"); 
+        $(this).find(".progress-bar").animate({ width: perc + "%" }, 800);
+    });
+	
+	
+    var originalWidth = $(".flaga").width();
+    var originalHeight = $(".flaga").height();
+
+    $(".flaga").on("mouseenter", function() {
+        $(this).stop().animate({
+            width: originalWidth * 3,  
+            height: originalHeight * 2.2,
+        }, 300);
+    }).on("mouseleave", function() {
+        $(this).stop().animate({
+            width: originalWidth,        
+            height: originalHeight
+        }, 300);
+    });
+	
+	let powiekszony = false;
+		 let powiekszony2 = false;
+	
+	 $("#budynekstrona").on("click", function() {
+    if (!powiekszony) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony = false;
+    }
+  });
+  
+  $("#budynekstrona2").on("click", function() {
+    if (!powiekszony2) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony2 = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony2 = false;
+    }
+  });
+});
+
+</script>
