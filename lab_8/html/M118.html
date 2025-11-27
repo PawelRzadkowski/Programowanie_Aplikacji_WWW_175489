@@ -1,0 +1,114 @@
+<br><br>
+<h1>Merdeka 118</h1>
+<p>Kraj: </p>
+<img src="img/Malezja.png" class="flaga" alt="flaga"><br><br>
+
+<p><u>Merdeka 118</u> to imponujący wieżowiec zlokalizowany w Kuala Lumpur, stolicy Malezji. Z wysokością wynoszącą <span style="color:red;">678,9 metra</span>, jest drugim najwyższym budynkiem na świecie, zaraz po Burdż Chalifa. Jego nazwa – „Merdeka” – oznacza „niepodległość” w języku malajskim i nawiązuje do pobliskiego stadionu Stadium Merdeka, miejsca, w którym ogłoszono niepodległość Malezji w 1957 roku. Budynek stanowi hołd dla historii kraju i jednocześnie symbol jego nowoczesności i rozwoju.
+<br><br>
+Wieża składa się z <span style="color:red;">118 kondygnacji</span> nad ziemią i kilku podziemnych. Jej unikalna, wielopłaszczyznowa fasada inspirowana jest sztuką islamską i kulturą malezyjską, co nadaje budowli charakterystyczny, dynamiczny wygląd. Projekt architektoniczny opracowała renomowana firma Fender Katsalidis, znana z realizacji innowacyjnych konstrukcji na całym świecie.
+<br><br>
+Merdeka 118 to nie tylko rekordowa wysokość, ale także nowoczesne centrum wielofunkcyjne. W budynku znajdują się luksusowe apartamenty, przestrzenie biurowe klasy premium, centrum handlowe, hotel Park Hyatt oraz najwyższy taras widokowy w Azji Południowo-Wschodniej, oferujący spektakularną panoramę Kuala Lumpur.
+<br><br>
+Wieżowiec został zaprojektowany z myślą o zrównoważonym rozwoju – wyposażony jest w nowoczesne systemy energooszczędne i certyfikaty ekologiczne, co czyni go jednym z najbardziej zaawansowanych technologicznie budynków w regionie.
+<br><br>
+Merdeka 118 to nie tylko osiągnięcie inżynierii, ale także silny symbol tożsamości narodowej i aspiracji Malezji do odgrywania ważnej roli na arenie międzynarodowej. To nowa ikona Kuala Lumpur, która łączy przeszłość, teraźniejszość i przyszłość w jednej, spektakularnej formie.</p>
+
+<br><br>
+<p><b>Galeria zdjęć kliknij aby powiększyć zdjęcie</b></p>
+<br><br>
+
+<img src="img/Merdeka118.jpg" id="budynekstrona" alt="budynek">
+
+<br><br><br><br>
+<p><b>Przypisy:</b></p>
+<ol>
+  <li>Wikipedia.com - Autorstwa <a href="//commons.wikimedia.org/wiki/User:JukoFF" title="User:JukoFF">JukoFF</a> - 
+  <span class="int-own-work" lang="pl">Praca własna</span>, 
+  <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, 
+  <a href="https://commons.wikimedia.org/w/index.php?curid=138735526">Link</a></li>
+</ol>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    
+    $(".building").on("click", function() {
+        if (!$(this).is(":animated")) {
+            $(this).animate({
+                width: "+=40px",
+                height: "+=25px"
+            }, 300);
+        }
+    });
+
+    
+    $(".building").on("mouseenter", function() {
+        $(this).css("z-index", "10");
+    }).on("mouseleave", function() {
+        $(this).css("z-index", "1");
+    });
+
+    
+    let numbers = $(".leader .number").map(function() {
+        return parseInt($(this).text());
+    }).get();
+
+    let max = Math.max(...numbers);
+
+    $(".leader").each(function() {
+        let num = parseInt($(this).find(".number").text());
+        let perc = (num / max) * 100;
+        $(this).find(".progress-bar").css("width", "0"); 
+        $(this).find(".progress-bar").animate({ width: perc + "%" }, 800);
+    });
+	
+	
+    var originalWidth = $(".flaga").width();
+    var originalHeight = $(".flaga").height();
+
+    $(".flaga").on("mouseenter", function() {
+        $(this).stop().animate({
+            width: originalWidth * 3,  
+            height: originalHeight * 2.2,
+        }, 300);
+    }).on("mouseleave", function() {
+        $(this).stop().animate({
+            width: originalWidth,        
+            height: originalHeight
+        }, 300);
+    });
+	
+	let powiekszony = false;
+		 let powiekszony2 = false;
+	
+	 $("#budynekstrona").on("click", function() {
+    if (!powiekszony) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony = false;
+    }
+  });
+  
+  $("#budynekstrona2").on("click", function() {
+    if (!powiekszony2) {
+      $(this).animate({
+        width: "550px"
+      }, 1000);
+      powiekszony2 = true;
+    } else {
+      $(this).animate({
+        width: "100px"
+      }, 1000);
+      powiekszony2 = false;
+    }
+  });
+});
+
+</script>
