@@ -21,7 +21,7 @@ function FormularzLogowania(){
 session_start();
 require_once "cfg.php";   
 
-// ---- Logowanie ----
+
 if (isset($_POST['x1_submit'])) {
 
     if ($_POST['login_email'] == $login && $_POST['login_pass'] == $pass) {
@@ -38,14 +38,13 @@ if (!isset($_SESSION['zalogowany']) || $_SESSION['zalogowany'] !== true) {
     exit();
 }
 
-// --- Wylogowanie ---
 if (isset($_POST['wyloguj'])) {
     session_destroy();
     header("Location: admin.php");
     exit();
 }
 
-// --- Panel admina ---
+
 echo "<h2>Witaj w panelu administratora</h2>";
 
 echo '<form method="post"><input type="submit" name="wyloguj" value="Wyloguj"></form>';
@@ -102,7 +101,7 @@ function EdytujPodstrone($conn)
 
     $row = mysqli_fetch_assoc($result);
 
-    // ---- Zapis zmian ----
+
     if (isset($_POST['zapisz'])) {
 
         $title   = mysqli_real_escape_string($conn, $_POST['page_title']);
@@ -126,7 +125,6 @@ function EdytujPodstrone($conn)
         }
     }
 
-    // ---- Formularz edycji ----
     echo '
     <h2>Edytuj podstronę</h2>
     <form method="post">
@@ -227,9 +225,7 @@ function UsunPodstrone($conn)
     echo '<p><a href="admin.php">Powrót do listy</a></p>';
 }
 
-// ====================
-// Wywołanie odpowiedniej funkcji
-// ====================
+
 if (isset($_GET['add'])) {
     DodajNowaPodstrone($conn);
     exit();
