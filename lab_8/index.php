@@ -3,24 +3,37 @@ include('cfg.php');
 include('showpage.php');
 error_reporting(E_ALL);
 
-$idp = $_GET['idp'] ?? '1'; 
+$idp = $_GET['idp'] ?? '1';
 
+require_once("contact.php");
+$contact = new Contact();
 
+// bezpieczna inicjalizacja
+$page_content = null;
+$strona_content = '';
 $page_content = PokazPodstrone($idp);
-
-if ($page_content !== "[nie_znaleziono_strony]") {
-    $strona_content = $page_content;
-} else {
-    //failsafe gdy nie wyciągnie id z bazy to wyświetli html zwykły
-    $sciezka = "html/logowanie.html";
-    if (file_exists($sciezka)) {
-        $strona_content = file_get_contents($sciezka);
+if ($page_content !== null && strpos($page_content, '{{CONTACT_FORM}}') !== false) {
+    $page_content = str_replace('{{CONTACT_FORM}}', $contact->PokazKontakt(), $page_content);
+}
+if ($idp == 7) {
+    if (isset($_POST['wyslij'])) {
+        $contact->WyslijMailKontakt("twoj_email@domena.pl");
+        $strona_content = $contact->PokazKontakt();
     } else {
-        $strona_content = "Strona nie istnieje";
+        $strona_content = $contact->PokazKontakt();
+    }
+} else {
+    if ($page_content !== "[nie_znaleziono_strony]" && !empty($page_content)) {
+        $strona_content = $page_content;
+    } else {
+        $sciezka = "html/logowanie.html";
+        if (file_exists($sciezka)) {
+            $strona_content = file_get_contents($sciezka);
+        } else {
+            $strona_content = "Strona nie istnieje";
+        }
     }
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pl">

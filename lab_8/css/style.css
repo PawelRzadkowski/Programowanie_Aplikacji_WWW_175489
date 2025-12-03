@@ -292,3 +292,34 @@ div.footer {
 	height: 30%;
 	width: 3%;
 }
+
+.contact-form {
+    padding: 20px;
+    border: 2px solid #222;
+    width: 450px;
+    background: #f8f8f8;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="email"],
+.contact-box textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.contact-box input[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-box input[type="submit"]:hover {
+    background: #444;
+}
