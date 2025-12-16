@@ -1,2 +1,2 @@
-Numer albumu : 175489
-Projekt 1.8
+Numer albumu : 175489 /n
+Wersja Projektu   1.9
