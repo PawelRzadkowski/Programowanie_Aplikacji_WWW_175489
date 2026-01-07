@@ -72,6 +72,7 @@ if (isset($_POST['wyloguj'])) {
 
 echo "<h2>Witaj w panelu administratora</h2>";
 
+
 echo '<form method="post"><input type="submit" name="wyloguj" value="Wyloguj"></form>';
 
 // ====================
