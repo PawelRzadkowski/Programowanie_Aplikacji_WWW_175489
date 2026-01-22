@@ -2,7 +2,7 @@
 <?php
 /**
  * ================================================
- *  smtp_mail.php – Wersja v1.8
+ *  smtp_mail.php – Wersja v1.11
  *  Funkcja: wyslijSMTP()
  *  Opis: Bezpieczna wysyłka maili przez PHPMailer
  * ================================================
@@ -36,28 +36,29 @@ require 'PHPMailer/src/Exception.php';
 function wyslijSMTP($odbiorca, $temat, $tresc)
 {
     $mail = new PHPMailer(true);
+	$mail->SMTPDebug = 0;
 
     try {
+        // konfiguracja SMTP
         $mail->isSMTP();
         $mail->Host = 'smtp.wp.pl';
         $mail->SMTPAuth = true;
+		$mail->CharSet = 'UTF-8';
         $mail->Username = 'p-rzadkowski7@wp.pl';
-        $mail->Password = '64ZACK47XM5PR27A';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+//haslo aplikacji wp		
+        $mail->Password = 'FQYMWV6M8AN24K8N';        
+        $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-
-        $mail->CharSet = 'UTF-8';
         $mail->setFrom('p-rzadkowski7@wp.pl', 'Formularz WWW');
         $mail->addAddress($odbiorca);
-
-        $mail->Subject = $temat;
-        $mail->Body = $tresc;
         $mail->isHTML(false);
+        $mail->Subject = $temat;
+        $mail->Body    = $tresc;
 
-        return $mail->send();
+        $mail->send();
+        return true;
 
     } catch (Exception $e) {
-        error_log($mail->ErrorInfo);
         return false;
     }
 }
